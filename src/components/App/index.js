@@ -1,5 +1,5 @@
 import React from 'react'
-import {HashRouter as Router,Route,Link} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import Home from './Home/index' // 主页
 import User from './User/index' // 用户
