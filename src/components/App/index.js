@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import {BrowserRouter as Router,Route,Link,Switch} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import Home from './Home/index' // 主页
 import User from './User/index' // 用户
@@ -27,9 +27,13 @@ export default (
             <div className="container">
                 <div className="row">
                     <div className="col-sm-12">
-                        <Route path="/home" component={Home}></Route>
-                        <Route path="/user" component={User}></Route>
-                        <Route path="/profile" component={Profile}></Route>
+                        <Switch>
+                            <Route exact path="/" render={props=><div>首页</div>}></Route>
+                            <Route path="/:name" render={props=><div>{props.match.params.name}</div>}></Route>
+                            <Route path="/home" component={Home}></Route>
+                            <Route path="/user" component={User}></Route>
+                            <Route path="/profile" component={Profile}></Route>
+                        </Switch>
                     </div>
                 </div>
             </div>
